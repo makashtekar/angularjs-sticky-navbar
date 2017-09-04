@@ -1,0 +1,30 @@
+{
+  "name": "angularjs-responsive-navbar",
+  "version": "1.0.0",
+  "description": "A responsive navbar component for angular 1.x",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torch2424/angularjs-responsive-navbar.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "navigation",
+    "responsive",
+    "navbar",
+    "toolbar"
+  ],
+  "author": "Aaron Turner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/torch2424/angularjs-responsive-navbar/issues"
+  },
+  "homepage": "https://github.com/torch2424/angularjs-responsive-navbar#readme"
+}
