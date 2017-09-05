@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "build": "npm run gh-pages",
-    "gh-pages": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css && ./node_modules/browserify/bin/cmd.js index.js -o bin/angularJSNavbar.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ] && cp bin/angularJSNavbar.js docs/angularJSNavbar.js"
+    "gh-pages": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css && ./node_modules/browserify/bin/cmd.js index.js -o bin/angularJSNavbar.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ] && ./node_modules/markdown-to-html/bin/github-markdown README.md > docs/README.html && cp navbar.css docs/navbar.css && cp bin/angularJSNavbar.js docs/angularJSNavbar.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "install": "^0.10.1",
+    "markdown-to-html": "0.0.13",
     "node-sass": "^4.5.3",
     "npm": "^5.3.0",
     "sass-bem-mixins": "^1.1.6",

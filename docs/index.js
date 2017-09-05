@@ -1,24 +1,44 @@
 (function() {
   const app = angular.module('ghpages', ['angularJSNavbar', 'ui.router']);
-  app.run(navbarRouteService => {
+  app.config($stateProvider => {
+    const homeState = {
+      name: 'home',
+      url: '/',
+      templateUrl: './README.html'
+    }
+
+    const testState = {
+      name: 'test',
+      url: '/test',
+      template: '<h3>I am the test route!</h3>'
+    }
+
+    $stateProvider.state(homeState);
+    $stateProvider.state(testState);
+  });
+  app.run((navbarRouteService, $state) => {
     navbarRouteService.enableAlwaysDesktop();
     navbarRouteService.setTitle('angular-js-navbar', {
       title: 'Home',
-      state: 'hello',
+      state: 'home',
       url: '/'
     });
     navbarRouteService.setRoutes([{
-      title: 'Hello',
-      state: 'hello',
+      title: 'Home',
+      state: 'home',
       url: '/'
     },
     {
-      title: 'Goodbye',
-      state: 'goodbye',
-      url: '/goodbye'
+      title: 'Test',
+      state: 'test',
+      url: '/test'
     }]);
+
+
+    // Go to the home state
+    $state.go('home');
   });
   app.controller('main', ($scope) => {
-    $scope.hello = 'hello world!';
+    $scope.instructions = 'NOTE: Use the navigation bar above to try angularjs-responsive-navbar. Also, resize the window to see responsiveness';
   });
 })();

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>angularjs-responsive-navbar</title>
 
-    <!-- CSS -->
+    <!-- CSS, Navbar.css copied from ../navbar.css -->
     <link rel="stylesheet" href="./index.css" type="text/css">
-    <link rel="stylesheet" href="../navbar.css" type="text/css">
+    <link rel="stylesheet" href="./navbar.css" type="text/css">
 
     <!-- 3P JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript">
@@ -24,8 +24,11 @@
   <body>
     <div ng-app="ghpages">
       <angular-js-navbar></angular-js-navbar>
-      <div ng-controller="main">
-        {{hello}}
+      <div ng-controller="main" class="container">
+        <!-- Test scope, and output instructions -->
+        <p>{{instructions}}</p>
+        <!-- Current Route View -->
+        <ui-view></ui-view>
       </div>
     </div>
   </body>
