@@ -17,7 +17,7 @@
     $stateProvider.state(testState);
   });
   app.run((navbarRouteService, $state) => {
-    navbarRouteService.enableAlwaysDesktop();
+    // navbarRouteService.enableAlwaysDesktop();
     navbarRouteService.setTitle('angular-js-navbar', {
       title: 'Home',
       state: 'home',

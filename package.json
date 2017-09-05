@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "build": "npm run sass && npm run bundle && npm run readme-html && npm run gh-pages",
-    "serve": "./node_modules/light-server/bin/light-server -s docs -p 8080 -w \"../**/*.js,./**/*.css,./**/*.html # npm run build\"",
+    "serve": "./node_modules/light-server/bin/light-server -s docs -p 8080 -w \"../**/*.js,./**/*.css,./**/*.html,../**/*.md # npm run build\"",
     "start": "npm run serve",
     "dev": "npm run serve",
     "sass": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css",

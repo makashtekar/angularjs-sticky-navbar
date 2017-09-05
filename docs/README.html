@@ -1,2 +1,53 @@
 <h1 id="angularjs-responsive-navbar">angularjs-responsive-navbar</h1>
 <p>A responsive navbar for Angular 1.x</p>
+<p><a href="https://badge.fury.io/js/angularjs-responsive-navbar"><img src="https://badge.fury.io/js/angularjs-responsive-navbar.svg" alt="npm version"></a></p>
+<p><img src="./docs/loadingSpinnerGithub.png" alt="angular JS responsive navbar screen shot"></p>
+<p>A css only, and sass importable, loading spinner. Been using this for years, and was inspired by an awesome stack overflow answer I could not find again. The project follows BEM naming conventions.</p>
+<p><a href="https://torch2424.github.io/sass-loading-spinner/">Github Pages Demo</a>.<br><a href="https://www.npmjs.com/package/sass-loading-spinner">NPM Module Link</a>.</p>
+<h2 id="usage">Usage</h2>
+<p>Install to the project:</p>
+<pre><code>npm install --save sass-loading-spinner
+</code></pre><p>Simply import at the top of a sass file to get going:</p>
+<pre><code class="lang-scss">@import &#39;./node_modules/sass-loading-spinner/index.scss&#39;;
+
+// Other Sass down here...
+</code></pre>
+<h2 id="example">Example</h2>
+<p>Please see the <a href="./docs">docs</a> folder for a very simple example project that is on the <a href="https://torch2424.github.io/sass-loading-spinner/">Github Pages</a>.</p>
+<p>Here is how the body should be set up to use the loading spinner. I would show each of the elements when determining your &quot;loading&quot; state. Each of these classes can be used independently of one another.</p>
+<pre><code class="lang-html">&lt;body&gt;
+
+  &lt;!-- Overlay for loading spinner --&gt;
+  &lt;div class=&quot;sass-loading-spinner__dark-overlay&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Centered Modal for the loading spinner --&gt;
+  &lt;div class=&quot;sass-loading-spinner__modal&quot;&gt;
+
+    &lt;!-- Title for the Modal --&gt;
+    &lt;h1 class=&quot;sass-loading-spinner__title&quot;&gt;
+    &lt;/h1&gt;
+
+    &lt;!-- Anything can be placed inside the modal --&gt;
+
+    &lt;!-- The loading spinner itself --&gt;
+    &lt;div class=&quot;sass-loading-spinner__spinner&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- App container element. If you don&#39;t have a container, I suggest moving everything in your &lt;body&gt;, into a container that way you can hide it when the loading state occurs. Also, please note, that the sass-loading-spinner__no-click class and aria-hidden attribute should be applied when loading starts, and removed when loading ends. --&gt;
+  &lt;main class=&quot;whatever-your-container-class-is sass-loading-spinner__no-click&quot; aria-hidden&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+</code></pre>
+<p>If you would like to change the base color of the spinner, you can use the $spinner variable:</p>
+<pre><code class="lang-sass">$spinner: #FF4A4A
+</code></pre>
+<h2 id="contributing">Contributing</h2>
+<p>Clone the project:</p>
+<pre><code>git clone https://github.com/torch2424/sass-loading-spinner.git
+</code></pre><p>Install devDependencies:</p>
+<pre><code>npm install
+</code></pre><p>Run the command: <code>npm run build</code>, to continuously see changes to the <code>index.html</code> in the <code>docs</code> folder. Sorry, but no livereload or watch is set up for this (Since it&#39;s just a simple little package).</p>
+<h2 id="license">LICENSE</h2>
+<p><a href="https://choosealicense.com/licenses/mit/#">MIT</a></p>
