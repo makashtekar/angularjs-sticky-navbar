@@ -8,8 +8,13 @@
   },
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "build": "npm run gh-pages",
-    "gh-pages": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css && ./node_modules/browserify/bin/cmd.js index.js -o bin/angularJSNavbar.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ] && ./node_modules/markdown-to-html/bin/github-markdown README.md > docs/README.html && cp navbar.css docs/navbar.css && cp bin/angularJSNavbar.js docs/angularJSNavbar.js"
+    "build": "npm run sass && npm run bundle && npm run readme-html && npm run gh-pages",
+    "serve": "npm run watch; ./node_modules/http-server/bin/http-server ./docs",
+    "watch": "./node_modules/watch/cli.js 'npm run build' . --interval=5 --wait=5",
+    "sass": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css",
+    "bundle": "./node_modules/browserify/bin/cmd.js index.js -o bin/angularJSNavbar.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ]",
+    "readme-html": "./node_modules/markdown-to-html/bin/github-markdown README.md > docs/README.html",
+    "gh-pages": "cp navbar.css docs/navbar.css && cp bin/angularJSNavbar.js docs/angularJSNavbar.js"
   },
   "repository": {
     "type": "git",
