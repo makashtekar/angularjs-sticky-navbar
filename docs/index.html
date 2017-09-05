@@ -2,24 +2,28 @@
 <html>
   <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>angularjs-responsive-navbar</title>
-  <link rel="stylesheet" href="./index.css" type="text/css">
-  <link rel="stylesheet" href="../navbar.css" type="text/css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" type="text/javascript">
-  </script>
-  <script src="../bundle.js" type="text/javascript">
-  </script>
-  <script src="./index.js" type="text/javascript">
-  </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./index.css" type="text/css">
+    <link rel="stylesheet" href="../navbar.css" type="text/css">
 
+    <!-- 3P JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" type="text/javascript">
+    </script>
+
+    <!-- Our JS, and Navbar JS Bundle -->
+    <script src="./index.js" type="text/javascript">
+    </script>
+    <script src="../bundle.js" type="text/javascript">
+    </script>
   </head>
   <body>
     <div ng-app="ghpages">
-      <angular-navbar></angular-navbar>
+      <angular-js-navbar></angular-js-navbar>
       <div ng-controller="main">
         {{hello}}
       </div>

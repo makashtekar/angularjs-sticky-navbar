@@ -1,8 +1,8 @@
 (function() {
-  const app = angular.module('ghpages', ['angularResponsiveNavbar', 'ui.router']);
+  const app = angular.module('ghpages', ['angularJSNavbar', 'ui.router']);
   app.run(navbarRouteService => {
     // navbarRouteService.enableAlwaysDesktop();
-    navbarRouteService.setTitle('Angular-Navbar', {
+    navbarRouteService.setTitle('angular-js-navbar', {
       title: 'Home',
       state: 'hello',
       url: '/'

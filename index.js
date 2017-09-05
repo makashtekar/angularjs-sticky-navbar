@@ -1,9 +1,9 @@
 import NavbarRouteService from './navbarRoute';
 import { Navbar } from './navbar';
 
-export const angularNavbarModule = 'angularResponsiveNavbar';
+export const angularJSNavbarModule = 'angularJSNavbar';
 
 window.angular
-  .module(angularNavbarModule, [])
+  .module(angularJSNavbarModule, [])
   .service('navbarRouteService', NavbarRouteService)
-  .component('angularNavbar', Navbar);
+  .component('angularJsNavbar', Navbar);

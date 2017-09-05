@@ -4,7 +4,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.angularNavbarModule = undefined;
+exports.angularJSNavbarModule = undefined;
 
 var _navbarRoute = require('./navbarRoute');
 
@@ -14,9 +14,9 @@ var _navbar = require('./navbar');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var angularNavbarModule = exports.angularNavbarModule = 'angularResponsiveNavbar';
+var angularJSNavbarModule = exports.angularJSNavbarModule = 'angularJSNavbar';
 
-window.angular.module(angularNavbarModule, []).service('navbarRouteService', _navbarRoute2.default).component('angularNavbar', _navbar.Navbar);
+window.angular.module(angularJSNavbarModule, []).service('navbarRouteService', _navbarRoute2.default).component('angularJsNavbar', _navbar.Navbar);
 
 },{"./navbar":3,"./navbarRoute":4}],2:[function(require,module,exports){
 module.exports = "<div class=\"angular-navbar\">\n  <!-- Desktop Horizontal Navbar -->\n  <div class=\"angular-navbar__desktop\"\n    ng-class=\"{'angular-navbar__desktop--always-show':\n      $ctrl.navbarRouteService.alwaysDesktop,\n      'angular-navbar__desktop--always-hide':\n        $ctrl.navbarRouteService.alwaysMobile}\">\n    <!-- Title -->\n    <div ng-if=\"$ctrl.navbarRouteService.title &&\n      !$ctrl.navbarRouteService.titleRoute\"\n      class=\"angular-navbar__desktop__title\">\n      {{$ctrl.navbarRouteService.title}}\n    </div>\n\n    <!-- Title Route -->\n    <div ng-if=\"$ctrl.navbarRouteService.titleRoute\"\n      class=\"angular-navbar__desktop__title--route\"\n      ng-click=\"$ctrl.goToState($ctrl.navbarRouteService.titleRoute)\">\n      {{$ctrl.navbarRouteService.title}}\n    </div>\n\n    <ul class=\"angular-navbar__desktop__list\">\n      <li ng-repeat=\"route in $ctrl.navbarRouteService.getRoutes()\"\n        ng-click=\"$ctrl.goToState(route)\"\n        class=\"angular-navbar__desktop__list__item\"\n        ng-class=\"{'angular-navbar__desktop__list__item--active': $ctrl.isActive(route)}\">\n        {{route.title}}\n      </li>\n    </ul>\n  </div>\n\n  <!-- Mobile Sidenav bar -->\n  <div class=\"angular-navbar__mobile\"\n  ng-class=\"{'angular-navbar__mobile--always-show':\n    $ctrl.navbarRouteService.alwaysMobile,\n    'angular-navbar__mobile--always-hide':\n      $ctrl.navbarRouteService.alwaysDesktop}\">\n\n    <!-- Hamburger menu button -->\n    <div class=\"angular-navbar__mobile__hamburger\"\n      ng-click=\"$ctrl.showNav = true\">\n      <div class=\"angular-navbar__mobile__hamburger__bar\">\n      </div>\n      <div class=\"angular-navbar__mobile__hamburger__bar\">\n      </div>\n      <div class=\"angular-navbar__mobile__hamburger__bar\">\n      </div>\n    </div>\n\n    <!-- Semi Transparent background -->\n    <div class=\"angular-navbar__mobile__shade\"\n      ng-class=\"{'angular-navbar__mobile__shade--nav-active': $ctrl.showNav}\"\n      ng-click=\"$ctrl.showNav = false\">\n    </div>\n\n    <!-- Sidenav that slides in -->\n    <div class=\"angular-navbar__mobile__sidenav\"\n      ng-class=\"{'angular-navbar__mobile__sidenav--nav-active': $ctrl.showNav}\">\n\n      <!-- Title -->\n      <div ng-if=\"$ctrl.navbarRouteService.title &&\n        !$ctrl.navbarRouteService.titleRoute\"\n        class=\"angular-navbar__mobile__sidenav__title\">\n        {{$ctrl.navbarRouteService.title}}\n      </div>\n\n      <!-- Title Route -->\n      <div ng-if=\"$ctrl.navbarRouteService.titleRoute\"\n        class=\"angular-navbar__mobile__sidenav__title--route\"\n        ng-click=\"$ctrl.goToState($ctrl.navbarRouteService.titleRoute)\">\n        {{$ctrl.navbarRouteService.title}}\n      </div>\n\n      <ul class=\"angular-navbar__mobile__sidenav__list\">\n        <li ng-repeat=\"route in $ctrl.navbarRouteService.getRoutes()\"\n          ng-click=\"$ctrl.goToState(route)\"\n          class=\"angular-navbar__mobile__sidenav__list__item\"\n          ng-class=\"{'angular-navbar__mobile__sidenav__list__item--active': $ctrl.isActive(route)}\">\n          {{route.title}}\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
