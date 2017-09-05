@@ -12,7 +12,7 @@
     "serve": "./node_modules/light-server/bin/light-server -s docs -p 8080 -w \"../**/*.js,./**/*.css,./**/*.html,../**/*.md # npm run build\"",
     "start": "npm run serve",
     "dev": "npm run serve",
-    "sass": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css",
+    "sass": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css && cp navbar.css bin/angularJSNavbar.css",
     "bundle": "./node_modules/browserify/bin/cmd.js index.js -o bin/angularJSNavbar.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ]",
     "readme-html": "./node_modules/markdown-to-html/bin/markdown README.md > docs/README.html",
     "gh-pages": "cp navbar.css docs/navbar.css && cp bin/angularJSNavbar.js docs/angularJSNavbar.js"
