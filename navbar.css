@@ -98,19 +98,19 @@
   justify-content: center;
 }
 
-.center-children-vertical {
+.center-children-vertical, .angular-navbar, .angular-navbar__desktop, .angular-navbar__desktop--always-show, .angular-navbar__desktop--always-hide {
   display: flex;
   align-items: center;
 }
 
 @media (max-width: 1024px) {
-  .always-show, .angular-navbar__desktop--always-show, .angular-navbar__mobile--always-show {
+  .always-show, .angular-navbar__mobile--always-show {
     display: block !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .always-show, .angular-navbar__desktop--always-show, .angular-navbar__mobile--always-show {
+  .always-show, .angular-navbar__mobile--always-show {
     display: block !important;
   }
 }
@@ -143,18 +143,24 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .angular-navbar__desktop--always-show {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .angular-navbar__desktop--always-show {
+    display: flex !important;
+  }
+}
+
 .angular-navbar__desktop__title, .angular-navbar__desktop__title--route {
   font-size: 1.75em;
-  position: absolute;
-  top: 10px;
-  left: 10px;
 }
 
 .angular-navbar__desktop__title--route {
   font-size: 1.75em;
-  position: absolute;
-  top: 10px;
-  left: 10px;
   cursor: pointer;
 }
 
@@ -162,8 +168,7 @@
   padding-left: 0px;
   /* Remove Bullets */
   list-style-type: none;
-  margin-left: 0px;
-  margin-top: 10px;
+  margin-left: 10px;
   display: inline-block;
 }
 
@@ -186,12 +191,10 @@
 }
 
 .angular-navbar__mobile__hamburger, .angular-navbar__mobile__hamburger--nav-active {
-  position: absolute;
-  top: 7px;
-  left: 10px;
   border: solid 2px #F9F9F9;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -205,8 +208,10 @@
 }
 
 .angular-navbar__mobile__shade, .angular-navbar__mobile__shade--nav-active {
-  visibility: hidden;
   position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
   z-index: -9999;
   background-color: #050505;
   opacity: 0;
@@ -225,8 +230,10 @@
 
 .angular-navbar__mobile__sidenav, .angular-navbar__mobile__sidenav--nav-active {
   position: fixed;
-  margin-left: -500px;
-  transition: margin-left 0.5s ease-in-out;
+  top: 0;
+  left: 0;
+  transform: translate(-500px, 0);
+  transition: transform 0.5s ease-in-out;
   min-height: 100%;
   min-width: 275px;
   max-width: 275px;
@@ -235,7 +242,7 @@
 }
 
 .angular-navbar__mobile__sidenav--nav-active {
-  margin-left: 0px;
+  transform: translate(0px, 0);
 }
 
 .angular-navbar__mobile__sidenav__title, .angular-navbar__mobile__sidenav__title--route {

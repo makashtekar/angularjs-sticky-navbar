@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "build": "npm run gh-pages",
-    "gh-pages": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css && ./node_modules/browserify/bin/cmd.js index.js -o bundle.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ]"
+    "gh-pages": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css && ./node_modules/browserify/bin/cmd.js index.js -o bin/angularJSNavbar.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ] && cp bin/angularJSNavbar.js docs/angularJSNavbar.js"
   },
   "repository": {
     "type": "git",
