@@ -9,8 +9,11 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "build": "npm run sass && npm run bundle && npm run readme-html && npm run gh-pages",
-    "serve": "npm run watch; ./node_modules/http-server/bin/http-server ./docs",
-    "watch": "./node_modules/watch/cli.js 'npm run build' . --interval=5 --wait=5",
+    "serve": "npm run dev",
+    "server": "npm run dev",
+    "dev": "npm run http && npm run watch",
+    "http": "./node_modules/http-server/bin/http-server ./docs",
+    "watch": "./node_modules/watch/cli.js 'npm run build' . --wait=10",
     "sass": "cat index.scss | ./node_modules/node-sass/bin/node-sass --output-style expanded > navbar.css",
     "bundle": "./node_modules/browserify/bin/cmd.js index.js -o bin/angularJSNavbar.js -t [ stringify ] -t [ babelify --presets [ es2015 ] ]",
     "readme-html": "./node_modules/markdown-to-html/bin/github-markdown README.md > docs/README.html",
@@ -38,6 +41,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "http-server": "^0.10.0",
     "install": "^0.10.1",
     "markdown-to-html": "0.0.13",
     "node-sass": "^4.5.3",
@@ -45,6 +49,7 @@
     "sass-bem-mixins": "^1.1.6",
     "sass-media-queries": "^1.0.3",
     "sass-theme-defaults": "^1.0.2",
-    "stringify": "^5.1.0"
+    "stringify": "^5.1.0",
+    "watch": "^1.0.2"
   }
 }
