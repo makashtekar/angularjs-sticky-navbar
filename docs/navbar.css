@@ -127,6 +127,25 @@
   }
 }
 
+li:hover,
+li:focus-within {
+  background: #424141;
+  cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
 .angular-navbar {
   width: 100%;
   background-color: #303030;
@@ -135,6 +154,13 @@
   margin-right: auto;
   text-align: center;
   min-height: 55px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.angular-navbar__desktop, .angular-navbar__desktop--always-show, .angular-navbar__desktop--always-hide {
+  width: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -182,6 +208,70 @@
 
 .angular-navbar__desktop__list__item--active {
   border-bottom: solid 2px #F9F9F9;
+}
+
+.angular-navbar__desktop__dropdown {
+  /* Remove Bullets */
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.angular-navbar__desktop__dropdown__item {
+  font-size: 1.5em;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+.angular-navbar__desktop__dropdown__item__menu {
+  background: #303030;
+  visibility: hidden;
+  list-style: none;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+  margin: 0;
+  font-size: smaller;
+  padding: 1rem 0;
+}
+
+.angular-navbar__desktop__dropdown__item__menu__item {
+  display: block;
+  clear: both;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.angular-navbar__desktop__dropdown__item :hover,
+.angular-navbar__desktop__dropdown__item :focus-within {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  cursor: pointer;
+}
+
+.angular-navbar__desktop__dropdown__item :hover a,
+.angular-navbar__desktop__dropdown__item :focus-within a {
+  outline: none;
+}
+
+.angular-navbar__desktop__actions {
+  margin-left: auto;
+}
+
+.angular-navbar__desktop__actions__logout {
+  margin-right: 2rem;
 }
 
 @media (min-width: 1024px) {

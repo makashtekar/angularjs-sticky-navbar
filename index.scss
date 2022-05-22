@@ -24,6 +24,26 @@ $navbar: #303030;
   }
 }
 
+
+li:hover,
+li:focus-within {
+  background: #424141;
+  cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li:hover>ul,
+ul li:focus-within>ul,
+ul li ul:hover,
+ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block
+}
+
 .angular-navbar {
   @extend .center-children-vertical;
 
@@ -35,11 +55,17 @@ $navbar: #303030;
   text-align: center;
   min-height: 55px;
 
+  // Sticky attributes
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   //Desktop Top Nav
 
   @include element('desktop') {
     @extend .center-children-vertical;
+
+    width: 100%;
 
     //Hide on mobile
     @include smq__all-mobile() {
@@ -92,6 +118,81 @@ $navbar: #303030;
         }
       }
     }
+
+    //ul
+    @include element('dropdown') {
+
+      /* Remove Bullets */
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+
+      //ul li
+      @include element('item') {
+        font-size: 1.5em;
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        // display: block;
+        float: left;
+        // padding: 1rem;
+        position: relative;
+        text-decoration: none;
+        transition-duration: 0.5s;
+
+        // ul li ul
+        @include element('menu') {
+          background: $navbar;
+          visibility: hidden;
+          list-style: none;
+          opacity: 0;
+          min-width: 5rem;
+          position: absolute;
+          transition: all 0.5s ease;
+          margin-top: 1rem;
+          left: 0;
+          display: none;
+          margin: 0;
+          font-size: smaller;
+          padding: 1rem 0;
+
+
+          @include element('item') {
+            display: block;
+            clear: both;
+            width: 100%;
+            float: left;
+            position: relative;
+
+          }
+
+        }
+
+        :hover,
+        :focus-within {
+
+          visibility: visible;
+          opacity: 1;
+          display: block;
+          cursor: pointer;
+
+          a {
+            outline: none;
+          }
+        }
+
+      }
+    }
+
+    @include element('actions') {
+      margin-left: auto;
+
+      @include element('logout') {
+        margin-right: 2rem;
+      }
+    }
   }
 
   //Mobile Sidenav
@@ -131,9 +232,7 @@ $navbar: #303030;
         width: 30px;
       }
 
-      @include modifier('nav-active') {
-
-      }
+      @include modifier('nav-active') {}
     }
 
     //Semi Transparent overlay behind sidenav
