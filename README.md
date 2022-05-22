@@ -1,4 +1,4 @@
-# angularjs-responsive-navbar
+# angularjs-responsive-sticky-with-dropdown-navbar
 
 [![npm version](https://badge.fury.io/js/angularjs-responsive-navbar.svg)](https://badge.fury.io/js/angularjs-responsive-navbar)
 
